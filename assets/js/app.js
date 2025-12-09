@@ -532,10 +532,7 @@ function temaIkonuGuncelle(tema) {
 // ==========================================
 // GÜNÜN ÖNERİSİ SİSTEMİ
 // ==========================================
-
-// Bu URL'yi kendi GitHub Raw JSON linkinizle değiştireceksiniz.
-// Şimdilik test için "sanal" bir veri objesi kullanıyorum.
-const ONERI_URL = "https://raw.githubusercontent.com/militiaweb/addgoo/main/gunun_onerisi.json"; 
+const ONERI_URL = "https://raw.githubusercontent.com/militiaweb/addgoo/refs/heads/main/oneriler.json"; 
 
 async function gununOnerisiniGetir() {
     const bugun = new Date().toISOString().slice(0, 10);
