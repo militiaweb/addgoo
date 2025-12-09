@@ -1,7 +1,23 @@
-{
-  "tarih": "2025-12-09",
-  "baslik": "CSS Kütüphanesi: Bootstrap",
-  "kategoriId": 1,
-  "url": "https://getbootstrap.com",
-  "aciklama": "Hızlı ve responsive tasarımlar için dünyanın en popüler HTML, CSS ve JS kütüphanesi."
-}
+[
+  {
+    "tarih": "2025-12-09",
+    "baslik": "CSS Kütüphanesi: Bootstrap",
+    "kategoriId": 1,
+    "url": "https://getbootstrap.com",
+    "aciklama": "Hızlı ve responsive tasarımlar."
+  },
+  {
+    "tarih": "2025-12-10",
+    "baslik": "Yapay Zeka: Gemini",
+    "kategoriId": 2,
+    "url": "https://gemini.google.com",
+    "aciklama": "Google'ın gelişmiş yapay zeka modeli."
+  },
+  {
+    "tarih": "2025-12-11",
+    "baslik": "Maker World",
+    "kategoriId": 5,
+    "url": "https://makerworld.com/en",
+    "aciklama": "3D baskı modelleri için harika bir topluluk."
+  }
+]
