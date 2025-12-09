@@ -1,0 +1,61 @@
+.delete-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 16px;
+  height: 16px;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  border: 2px solid #2b3035;
+}
+
+.delete-btn:hover {
+  background-color: #bb2d3b;
+  transform: scale(1.1);
+}
+
+.edit-mode .card {
+  border: 1px dashed #6c757d !important;
+}
+
+.edit-mode .btn-link-custom {
+  cursor: context-menu !important;
+}
+
+.sort-btn {
+  position: absolute;
+  bottom: -8px;
+  width: 16px;
+  height: 16px;
+  background-color: #0dcaf0;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  border: 2px solid #2b3035;
+}
+
+.sort-btn:hover {
+  background-color: #3dd5f3;
+  transform: scale(1.1);
+}
+
+.sort-left { left: 5px; }
+.sort-right { left: 30px; }
+
+#butset button i {
+  font-size: 14px;
+}
