@@ -539,26 +539,32 @@ async function gununOnerisiniGetir() {
     const sonGosterim = localStorage.getItem('lastSuggestionDate');
 
     if (sonGosterim === bugun) {
-        console.log("Bugün zaten öneri gösterildi.");
-        return;
+        return; 
     }
 
     try {
         const response = await fetch(ONERI_URL);
-        const veri = await response.json();
-
-        if (veri.tarih !== bugun) return; 
-
+        const tumOneriler = await response.json();
+        const veri = tumOneriler.find(item => item.tarih === bugun);
+        
+        if (!veri) {
+            return;
+        }
+        
         document.getElementById('oneriBaslik').innerText = veri.baslik;
         document.getElementById('oneriAciklama').innerText = veri.aciklama;
         document.getElementById('oneriLink').href = veri.url;
+
         window.aktifOneri = veri;
 
         const toastEl = document.getElementById('oneriToast');
         toastEl.classList.add('bg-body-tertiary', 'text-body'); 
-        const toast = new bootstrap.Toast(toastEl, { autohide: false }); // Kapanmasın, kullanıcı kapatsın
+        
+        const toast = new bootstrap.Toast(toastEl, { autohide: false });
         toast.show();
+
         localStorage.setItem('lastSuggestionDate', bugun);
+
     } catch (error) {
         console.error("Öneri çekilemedi:", error);
     }
