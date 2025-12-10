@@ -8,160 +8,136 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
 <link rel="stylesheet" href="assets/css/style.css">
 
 <style>body { font-family: 'Inter', sans-serif; }</style>
 </head>
 <body>
 
-    <div class="auto-container mx-5 py-5">
-
-        <div class="row mb-4 justify-content-center">
-            <div class="col-md-4 text-center">
-                <h1 class="display-6 fw-bold mb-3">AddGoo</h1>
-                <div class="input-group input-group-md">
-                    <span class="input-group-text bg-secondary-subtle border-0"><i class="fa-solid fa-search"></i></span>
-                    <input type="text" class="form-control bg-secondary-subtle border-0" placeholder="Google'da ara...">
-                    <button class="btn btn-primary px-4">Ara</button>
-                </div>
-            </div>
+    <div class="auto-container mx-5 pt-3">
+      <div class="row g-4" id="link-container">
+        <div class="text-center py-5 text-muted">
+          <div class="spinner-border text-primary" role="status"></div>
+          <p class="mt-2">Loading data...</p>
         </div>
-
-        <div class="row g-4" id="link-container">
-            
-            <div class="text-center py-5 text-muted">
-                <div class="spinner-border text-primary" role="status"></div>
-                <p class="mt-2">Loading data...</p>
-            </div>
-
-        </div>
+      </div>
     </div>
 
     <div id="butset" class="position-fixed bottom-0 end-0 p-4 d-flex flex-column gap-2" style="z-index: 1050;">
-        <input type="file" id="yedekDosyaInput" class="d-none" accept=".json" onchange="yedekYukle(this)">
-        <button class="btn btn-secondary rounded-circle shadow" id="btnTheme" onclick="temaDegistir()" title="Temayı Değiştir (Koyu/Açık)"><i class="fa-solid fa-moon"></i></button>
-        <button class="btn btn-secondary rounded-circle shadow" onclick="yedekAl()" title="Yedek Al (İndir)"><i class="fa-solid fa-download"></i></button>
-        <button class="btn btn-secondary rounded-circle shadow" onclick="document.getElementById('yedekDosyaInput').click()" title="Yedek Yükle"><i class="fa-solid fa-upload"></i></button>
-        <button class="btn btn-info rounded-circle shadow text-white" onclick="kategoriYonetiminiAc()"title="Kategorileri Yönet"><i class="fa-solid fa-folder-tree"></i></button>
-        <button class="btn btn-success rounded-circle shadow" id="btnEditMode" onclick="toggleEditMode()" title="Düzenleme Modunu Aç/Kapat"><i class="fa-solid fa-gear"></i></button>
-        <button class="btn btn-primary rounded-circle shadow" data-bs-toggle="modal" data-bs-target="#eklemeModal"title="Yeni Link Ekle"><i class="fa-solid fa-plus"></i></button>
+      <input type="file" id="yedekDosyaInput" class="d-none" accept=".json" onchange="yedekYukle(this)">
+      <button class="btn btn-secondary rounded-circle shadow" id="btnTheme" onclick="temaDegistir()" title="Temayı Değiştir (Koyu/Açık)"><i class="fa-solid fa-moon"></i></button>
+      <button class="btn btn-secondary rounded-circle shadow" onclick="yedekAl()" title="Yedek Al (İndir)"><i class="fa-solid fa-download"></i></button>
+      <button class="btn btn-secondary rounded-circle shadow" onclick="document.getElementById('yedekDosyaInput').click()" title="Yedek Yükle"><i class="fa-solid fa-upload"></i></button>
+      <button class="btn btn-info rounded-circle shadow text-white" onclick="kategoriYonetiminiAc()"title="Kategorileri Yönet"><i class="fa-solid fa-folder-tree"></i></button>
+      <button class="btn btn-success rounded-circle shadow" id="btnEditMode" onclick="toggleEditMode()" title="Düzenleme Modunu Aç/Kapat"><i class="fa-solid fa-gear"></i></button>
+      <button class="btn btn-primary rounded-circle shadow" data-bs-toggle="modal" data-bs-target="#eklemeModal"title="Yeni Link Ekle"><i class="fa-solid fa-plus"></i></button>
     </div>
 
-<div class="modal fade" id="eklemeModal" tabindex="-1" aria-hidden="true">
+  <div class="modal fade" id="eklemeModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content bg-dark border-secondary text-white">
-            
-            <div class="modal-header border-secondary">
-                <h5 class="modal-title"><i class="fa-solid fa-link me-2"></i>Yeni Link Ekle</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Kapat"></button>
-            </div>
-            
-            <div class="modal-body">
-                <form id="eklemeFormu">
-                    <input type="hidden" id="editModeTarget" value="">
-                    
-                    <div class="mb-3">
-                        <label class="form-label text-white-50 small">Kategori</label>
-                        <select class="form-select bg-dark text-white border-secondary" id="inpKategori">
-                            </select>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label text-white-50 small">Site Adı</label>
-                        <input type="text" class="form-control bg-dark text-white border-secondary" 
-                               id="inpAd" placeholder="Örn: Google" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label text-white-50 small">URL Adresi</label>
-                        <input type="url" class="form-control bg-dark text-white border-secondary" 
-                               id="inpUrl" placeholder="https://..." required>
-                    </div>
-
-                </form>
-            </div>
-            
-            <div class="modal-footer border-secondary">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
-                <button type="button" class="btn btn-primary" onclick="yeniLinkKaydet()">Kaydet</button>
-            </div>
-
+      <div class="modal-content bg-dark border-secondary text-white">
+              
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title"><i class="fa-solid fa-link me-2"></i>Yeni Link Ekle</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Kapat"></button>
         </div>
-    </div>
-</div>
+              
+        <div class="modal-body">
+          <form id="eklemeFormu">
+            <input type="hidden" id="editModeTarget" value="">
+                      
+            <div class="mb-3">
+              <label class="form-label text-white-50 small">Kategori</label>
+              <select class="form-select bg-dark text-white border-secondary" id="inpKategori"></select>
+            </div>
 
-<div class="modal fade" id="kategoriModal" tabindex="-1" aria-hidden="true">
+            <div class="mb-3">
+              <label class="form-label text-white-50 small">Site Adı</label>
+              <input type="text" class="form-control bg-dark text-white border-secondary" id="inpAd" placeholder="Örn: Google" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label text-white-50 small">URL Adresi</label>
+              <input type="url" class="form-control bg-dark text-white border-secondary" id="inpUrl" placeholder="https://..." required>
+            </div>
+
+          </form>
+        </div>
+              
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+          <button type="button" class="btn btn-primary" onclick="yeniLinkKaydet()">Kaydet</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="kategoriModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content bg-dark border-secondary text-white">
-            
-            <div class="modal-header border-secondary">
-                <h5 class="modal-title"><i class="fa-solid fa-folder-tree me-2"></i>Kategori Yönetimi</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-            </div>
-            
-            <div class="modal-body">
-                
-                <div class="card bg-secondary bg-opacity-10 border-secondary mb-4">
-                    <div class="card-body">
-                        <h6 class="card-title text-info mb-3" id="catFormTitle">Yeni Kategori Ekle</h6>
-                        <div class="row g-2 align-items-end">
-                            <input type="hidden" id="catEditId"> <div class="col-md-6">
-                                <label class="small text-white-50">Kategori Adı</label>
-                                <input type="text" id="catAd" class="form-control bg-dark text-white border-secondary" placeholder="Örn: 3D Yazıcı">
-                            </div>
-                            <div class="col-md-3">
-                                <label class="small text-white-50">Sütun</label>
-                                <select id="catKolon" class="form-select bg-dark text-white border-secondary">
-                                    <option value="1">1. Sütun (Sol)</option>
-                                    <option value="2">2. Sütun (Orta)</option>
-                                    <option value="3">3. Sütun (Sağ)</option>
-                                </select>
-                            </div>
-                            <div class="col-md-3">
-                                <button class="btn btn-success w-100" onclick="kategoriKaydet()">
-                                    <i class="fa-solid fa-save me-1"></i> Kaydet
-                                </button>
-                            </div>
-                        </div>
-                        <div id="catCancelBtn" class="mt-2 text-end d-none">
-                            <button class="btn btn-sm btn-link text-white-50 text-decoration-none" onclick="kategoriFormuSifirla()">
-                                <i class="fa-solid fa-times"></i> Vazgeç
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <h6 class="text-white-50 border-bottom border-secondary pb-2">Mevcut Kategoriler</h6>
-                <div class="list-group list-group-flush" id="kategoriListesi">
-                    </div>
-
-            </div>
+      <div class="modal-content bg-dark border-secondary text-white">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title"><i class="fa-solid fa-folder-tree me-2"></i>Kategori Yönetimi</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
         </div>
+        <div class="modal-body">
+          <div class="card bg-secondary bg-opacity-10 border-secondary mb-4">
+            <div class="card-body">
+              <h6 class="card-title text-info mb-3" id="catFormTitle">Yeni Kategori Ekle</h6>
+              <div class="row g-2 align-items-end">
+                <input type="hidden" id="catEditId"> 
+                <div class="col-md-6">
+                  <label class="small text-white-50">Kategori Adı</label>
+                  <input type="text" id="catAd" class="form-control bg-dark text-white border-secondary" placeholder="Örn: 3D Yazıcı">
+                </div>
+                <div class="col-md-3">
+                  <label class="small text-white-50">Sütun</label>
+                  <select id="catKolon" class="form-select bg-dark text-white border-secondary">
+                    <option value="1">1. Sütun (Sol)</option>
+                    <option value="2">2. Sütun (Orta)</option>
+                    <option value="3">3. Sütun (Sağ)</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <button class="btn btn-success w-100" onclick="kategoriKaydet()">
+                    <i class="fa-solid fa-save me-1"></i> Kaydet
+                  </button>
+                </div>
+              </div>
+              <div id="catCancelBtn" class="mt-2 text-end d-none">
+                <button class="btn btn-sm btn-link text-white-50 text-decoration-none" onclick="kategoriFormuSifirla()">
+                  <i class="fa-solid fa-times"></i> Vazgeç
+                </button>
+              </div>
+            </div>
+          </div>
+          <h6 class="text-white-50 border-bottom border-secondary pb-2">Mevcut Kategoriler</h6>
+          <div class="list-group list-group-flush" id="kategoriListesi"></div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 
-<div class="toast-container position-fixed bottom-0 start-0 p-3" style="z-index: 1060;">
+
+  <div class="toast-container position-fixed bottom-0 start-0 p-3" style="z-index: 1060;">
     <div id="oneriToast" class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="d-flex">
-            <div class="toast-body d-flex flex-column gap-2">
-                <strong class="text-primary" id="oneriBaslik"></strong>
-                <div class="small text-body-secondary" id="oneriAciklama"></div>
-                <div class="mt-1">
-                    <button type="button" class="btn btn-sm btn-primary" onclick="oneriyiEkle()">
-                        <i class="fa-solid fa-plus me-1"></i> Ekle
-                    </button>
-                    <a href="#" target="_blank" id="oneriLink" class="btn btn-sm btn-outline-secondary ms-1">İncele</a>
-                </div>
-            </div>
-            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Kapat"></button>
+      <div class="d-flex">
+        <div class="toast-body d-flex flex-column gap-2">
+          <strong class="text-primary" id="oneriBaslik"></strong>
+          <div class="small text-body-secondary" id="oneriAciklama"></div>
+          <div class="mt-1">
+            <button type="button" class="btn btn-sm btn-primary" onclick="oneriyiEkle()">
+              <i class="fa-solid fa-plus me-1"></i> Ekle
+            </button>
+            <a href="#" target="_blank" id="oneriLink" class="btn btn-sm btn-outline-secondary ms-1">İncele</a>
+          </div>
         </div>
+        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Kapat"></button>
+      </div>
     </div>
-</div>
+  </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/data.js"></script>
