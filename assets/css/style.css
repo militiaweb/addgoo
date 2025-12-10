@@ -60,6 +60,36 @@
   font-size: 14px;
 }
 
+#butset .btn::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  font-size: 0.8rem;
+  background: #222;
+  color: #fff;
+  padding: 3px 16px 3px 8px;
+  z-index: -1;
+  opacity: 0;
+  transition: all 500ms ease;
+}
+
+#butset .btn:hover::before {
+  content: attr(data-title);
+  right: 60px;
+  width: max-content;
+  opacity: 1;
+}
+
+.btn-xs {
+  padding: 3px;
+  line-height: 0;
+  margin-bottom: 3px;
+}
+
+.udbtns {
+  width: 60px;
+}
+
 html[data-bs-theme="light"] {
   & body{
     background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
@@ -67,6 +97,14 @@ html[data-bs-theme="light"] {
   }
   .card-header {
     background-color: rgb(190, 210, 223) !important;
+  }
+  .modal-theme {
+    background-color: rgb(190, 210, 223) !important;
+    color: rgb(28, 28, 28) !important;
+  }
+  .btn-outline-theme {
+    border: 1px solid rgb(77, 77, 77);
+    color: rgb(77, 77, 77);
   }
 }
 
@@ -78,5 +116,16 @@ html[data-bs-theme="dark"] {
   }
   .card-header {
     background-color: rgb(28, 28, 28) !important;
+  }
+  .modal-theme {
+    background-color: rgb(28, 28, 28) !important;
+    color: rgb(190, 210, 223) !important;
+  }
+  .modal-theme .form-label, .modal-theme .btn-close{
+    color: rgb(190, 210, 223) !important;
+  }
+  .btn-outline-theme {
+    border: 1px solid rgb(190, 210, 223);
+    color: rgb(190, 210, 223);
   }
 }
