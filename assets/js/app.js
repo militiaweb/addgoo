@@ -258,7 +258,7 @@ function kategoriListesiniRenderEt() {
         const sutunKats = veri.filter(k => k.kolon === i);
         
         if(sutunKats.length > 0) {
-            listeKutusu.innerHTML += `<div class="text-info border-bottom border-secondary mt-3 mb-2 small">Sütun ${i}</div>`;
+            listeKutusu.innerHTML += `<div class="border-bottom border-secondary mt-3 mb-2 small">Sütun ${i}</div>`;
         }
 
         sutunKats.forEach((kat, index) => {
@@ -266,26 +266,26 @@ function kategoriListesiniRenderEt() {
             const isLast = (index === sutunKats.length - 1);
 
             const upBtn = isFirst ? '' : 
-                `<button class="btn btn-sm btn-dark border-secondary me-1" onclick="kategoriTasi(${kat.id}, 'yukari')"><i class="fa-solid fa-chevron-up"></i></button>`;
+                `<button class="btn btn-xs border-secondary me-1" onclick="kategoriTasi(${kat.id}, 'yukari')"><i class="fa-solid fa-chevron-up"></i></button>`;
             
             const downBtn = isLast ? '' : 
-                `<button class="btn btn-sm btn-dark border-secondary me-1" onclick="kategoriTasi(${kat.id}, 'asagi')"><i class="fa-solid fa-chevron-down"></i></button>`;
+                `<button class="btn btn-xs border-secondary me-1" onclick="kategoriTasi(${kat.id}, 'asagi')"><i class="fa-solid fa-chevron-down"></i></button>`;
 
             const item = document.createElement('div');
-            item.className = 'list-group-item bg-transparent text-white border-secondary d-flex justify-content-between align-items-center py-2';
+            item.className = 'list-group-item border-secondary d-flex justify-content-between align-items-center py-2';
             item.innerHTML = `
                 <div class="d-flex align-items-center">
-                    <div class="d-flex flex-column me-3">
+                    <div class="d-flex flex-row udbtns me-3">
                         ${upBtn} ${downBtn}
                     </div>
                     <div>
                         <span class="fw-bold">${kat.baslik}</span>
-                        <span class="small text-white-50 ms-2">(${kat.linkler.length} Link)</span>
+                        <span class="small ms-2">(${kat.linkler.length} Link)</span>
                     </div>
                 </div>
                 <div class="btn-group">
-                    <button class="btn btn-sm btn-outline-warning" onclick="kategoriDuzenleHazirla(${kat.id})"><i class="fa-solid fa-pen"></i></button>
-                    <button class="btn btn-sm btn-outline-danger" onclick="kategoriSil(${kat.id})"><i class="fa-solid fa-trash"></i></button>
+                    <button class="btn btn-sm btn-outline-theme" onclick="kategoriDuzenleHazirla(${kat.id})"><i class="fa-solid fa-pen"></i></button>
+                    <button class="btn btn-sm btn-outline-theme" onclick="kategoriSil(${kat.id})"><i class="fa-solid fa-trash"></i></button>
                 </div>
             `;
             listeKutusu.appendChild(item);
