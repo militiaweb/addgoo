@@ -113,11 +113,9 @@ function generateLinksHTML(linklerDizisi, kategoriId) {
             <div class="position-relative mb-2">
                 ${editTools}
                 <a ${actionAttr} 
-                   class="btn btn-dark bg-opacity-25 border border-secondary border-opacity-25 
-                          d-flex align-items-center gap-2 text-decoration-none text-light btn-sm btn-link-custom"
+                   class="btn bg-opacity-25 border border-secondary border-opacity-25 d-flex align-items-center gap-2 text-decoration-none text-light btn-sm btn-link-custom"
                    title="${link.ad}">
                    ${imgTag}
-                  
                 </a>
             </div>
         `;
