@@ -90,6 +90,23 @@
   width: 60px;
 }
 
+#gon {
+  z-index: 90;
+  width: 24px;
+  height: max-content;
+  writing-mode: vertical-lr;
+  transform: scale(-1, -1);
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  padding: 10px 0;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border: 1px solid aliceblue;
+  border-right: 0;
+  cursor: pointer;
+}
+
 html[data-bs-theme="light"] {
   & body{
     background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
