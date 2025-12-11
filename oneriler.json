@@ -1,23 +1,23 @@
-[
-  {
-    "tarih": "2025-12-09",
-    "baslik": "CSS Kütüphanesi: Bootstrap",
-    "kategoriId": 1,
-    "url": "https://getbootstrap.com",
-    "aciklama": "Hızlı ve responsive tasarımlar."
-  },
-  {
-    "tarih": "2025-12-10",
-    "baslik": "Yapay Zeka: Gemini",
-    "kategoriId": 2,
-    "url": "https://gemini.google.com",
-    "aciklama": "Google'ın gelişmiş yapay zeka modeli."
-  },
-  {
-    "tarih": "2025-12-11",
-    "baslik": "Maker World",
-    "kategoriId": 5,
-    "url": "https://makerworld.com/en",
-    "aciklama": "3D baskı modelleri için harika bir topluluk."
-  }
+﻿[
+  {"tarih":"2025-12-11","baslik":"Maker World","kategoriId":1,"url":"https://makerworld.com/en","aciklama":"3D baskı modelleri için harika bir topluluk."},
+  {"tarih":"2025-12-12","baslik":"TinyIMG","kategoriId":1,"url":"https://tiny-img.com/","aciklama":"Akıllı bir görüntü sıkıştırma ve optimizasyon aracı"},
+  {"tarih":"2025-12-13","baslik":"Freepik","kategoriId":1,"url":"https://www.freepik.com/","aciklama":"Yaratıcı paket—AI araçları ve stok içerikler"},
+  {"tarih":"2025-12-14","baslik":"Flaticon","kategoriId":1,"url":"https://www.flaticon.com/","aciklama":"Projeleriniz için ücretsiz ikonlar ve çıkartmalar indirin"},
+  {"tarih":"2025-12-15","baslik":"Photopea","kategoriId":1,"url":"https://www.photopea.com/","aciklama":"Ücretiz bir çevrimiçi fotoğraf düzenleyici aracı"},
+  {"tarih":"2025-12-16","baslik":"Anime Genius","kategoriId":1,"url":"https://animegenius.live3d.io/","aciklama":"Ücretsiz bir Anime AI üreticisi"},
+  {"tarih":"2025-12-17","baslik":"Line Awesome","kategoriId":1,"url":"https://icons8.com/line-awesome","aciklama":"Bir satır kodda Font Awesome'ı modern çizgi simgeleriyle değiştirin"},
+  {"tarih":"2025-12-18","baslik":"Son Depremler","kategoriId":1,"url":"http://www.koeri.boun.edu.tr/scripts/lst2.asp","aciklama":"Son depremleri listeleyen önemli bir sayfa"},
+  {"tarih":"2025-12-19","baslik":"BlueSky","kategoriId":1,"url":"https://bsky.app/","aciklama":"Güzel bir Twitter (X) alternatifi"},
+  {"tarih":"2025-12-20","baslik":"Neumorphism","kategoriId":1,"url":"https://neumorphism.io","aciklama":"Renkler, gradyanlar ve gölgelerle neumorfizmi uyarlayın"},
+  {"tarih":"2025-12-21","baslik":"Hugging Face","kategoriId":1,"url":"https://huggingface.co/","aciklama":"Makine öğrenimi kullanarak uygulamalar geliştirmek için hesaplama araçları sağlayan bir platform"},
+  {"tarih":"2025-12-22","baslik":"UnCSS","kategoriId":1,"url":"https://uncss-online.com/","aciklama":"Stillerinizi çevrimiçi olarak basitçe UnCSS yapın!"},
+  {"tarih":"2025-12-23","baslik":"Wan AI","kategoriId":1,"url":"https://create.wan.video/","aciklama":"Yapay zeka tabanlı bir yaratıcı platformu"},
+  {"tarih":"2025-12-24","baslik":"Formatter","kategoriId":1,"url":"https://www.freeformatter.com/","aciklama":"Geliştiriciler için ücretsiz çevrimiçi araçlar ve formatlayıcılar"},
+  {"tarih":"2025-12-25","baslik":"Omatsuri","kategoriId":1,"url":"https://omatsuri.app/","aciklama":"12 açık kaynaklı ön yüz odaklı araçla ilerici web uygulaması"},
+  {"tarih":"2025-12-26","baslik":"Web Gradients","kategoriId":1,"url":"https://webgradients.com/","aciklama":"CSS3, Photoshop ve Sketch'te 180 güzel lineer gradyan deposu"},
+  {"tarih":"2025-12-27","baslik":"RTL CSS","kategoriId":1,"url":"https://rtlcss.com/playground/","aciklama":"LTR olan CSS'leri RTL dönüştürmek için güzel bir araç"},
+  {"tarih":"2025-12-28","baslik":"My Anime List","kategoriId":1,"url":"https://myanimelist.net/","aciklama":"Dünyanın en aktif çevrimiçi anime ve manga topluluğu"},
+  {"tarih":"2025-12-29","baslik":"Civit AI","kategoriId":1,"url":"https://civitai.com/","aciklama":"Binlerce yüksek kaliteli Stabil Difüzyon ve Akış modelleri"},
+  {"tarih":"2025-12-30","baslik":"Envato","kategoriId":1,"url":"https://elements.envato.com/","aciklama":"Videolar, sesler, fotoğraflar, grafik şablonları ve yazı tipleri"},
+  {"tarih":"2025-12-31","baslik":"Dzine","kategoriId":1,"url":"https://www.dzine.ai/","aciklama":"En kontrol edilebilir AI tasarım aracı"}
 ]
