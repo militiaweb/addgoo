@@ -587,3 +587,9 @@ function oneriyiEkle() {
     const toastInstance = bootstrap.Toast.getInstance(toastEl);
     toastInstance.hide();
 }
+
+const gon = document.getElementById('gon');
+gon.addEventListener("click", function (e) {
+  localStorage.removeItem('lastSuggestionDate');
+  gununOnerisiniGetir();
+})
