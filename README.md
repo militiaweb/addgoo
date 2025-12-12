@@ -1,4 +1,4 @@
-# 🚀 AddGoo | Kişisel Tarayıcı Başlangıç Sayfası
+# AddGoo | Kişisel Tarayıcı Başlangıç Sayfası
 
 **Hızlı, Özelleştirilebilir ve %100 Gizlilik Odaklı Dashboard.**
 
